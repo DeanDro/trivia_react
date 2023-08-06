@@ -1,11 +1,10 @@
 import React from "react";
 import { ReactDOM } from "react";
 
-function Navbar(){
-    let questionNumber = 1;
+function Navbar(props){
     return (
         <nav className="questions">
-            <h2>Question: {questionNumber}/20</h2>
+            <h2>Question: {props.counter}/20</h2>
         </nav>
     );
 };
