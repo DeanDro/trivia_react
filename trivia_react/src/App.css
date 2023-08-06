@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.mainDashboard{
+  background-color: #453D3D;
+}
+
+.questions{
+  display: grid;
+  grid-template-columns: 20% 60%;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: "header header";
+  text-align: center;
+  color: white;
+}
