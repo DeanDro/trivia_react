@@ -1,6 +1,7 @@
-import {React, useState, createContext} from 'react';
+import {React} from 'react';
 import Navbar from './Navbar';
 import Card from './Card';
+import Footer from './Footer';
 
 
 export let counter = 0;
@@ -11,6 +12,7 @@ function Dashboard(){
         <div className='mainDashboard'>
             <Navbar counter={question_number}/>
             <Card/>
+            <Footer/>
         </div>
     )
 }

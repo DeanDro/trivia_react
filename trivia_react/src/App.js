@@ -1,9 +1,9 @@
 import './App.css';
-import Dashboard from './components/Dashboard';
+import DataProvider from './data/DataProvider';
 
 function App() {
   return (
-    <Dashboard/>
+    <DataProvider/>
   );
 }
 
