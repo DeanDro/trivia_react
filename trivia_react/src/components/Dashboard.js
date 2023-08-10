@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import Card from './Card';
 import Footer from './Footer';
 
-
 export let counter = 0;
 
 function Dashboard(){

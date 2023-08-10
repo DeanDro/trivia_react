@@ -1,5 +1,5 @@
 import {React, createContext} from "react";
-import Dashboard from "../components/Dashboard";
+import GameInit from "../components/GameInit";
 
 const harryPotter = 
     {
@@ -16,8 +16,8 @@ export const DatabaseContext = createContext();
 function DataProvider(){
     return(
         <DatabaseContext.Provider value={harryPotter}>
-            <Dashboard/>
-        </DatabaseContext.Provider>
+            <GameInit/>
+        </DatabaseContext.Provider> 
     )
 }
 

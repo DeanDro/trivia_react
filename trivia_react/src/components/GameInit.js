@@ -1,28 +1,31 @@
 import React from "react";
 import Dashboard from "./Dashboard";
-import {BrowserRoute, Routes, Route } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
+
+
+function startGame(){
+    return (
+        <Link to="/dashboard"></Link>
+    );
+};
 
 
 function GameInit(){
-    let category;
     return (
-        <Routes>
-            <div className="categoryChoice">
-                <div className="instructions">
-                    <h2>Trivia Literature</h2>
-                    <div className="choices">
-                        <label>Choose a category:</label>
-                        <button className="dropdown">
-                            <span>Categories</span>
-                            <span className="arrow"></span>
-                        </button>
-                        <ul className="dropdown_content" role="menu">
-                            <li>Harry Potter</li>
-                            <li>Games of Chance</li>
-                        </ul>
-                    </div>
+        <div className="categoryChoice">
+            <div className="instructions">
+                <h2>Trivia Literature</h2>
+                <div className="choices">
+                    <label for="categories_dropdown">Choose a category:</label>
+                    <select name="categories_dropdown" id="categories_dropdown">
+                        <option value="Harry_Potter">Harry Potter</option>
+                        <option value="Games_of_Chance">Games of Chance</option>
+                    </select>
+                    <button type="submit" onSubmit={startGame} className="submit_category">Start Trivia</button>
                 </div>
             </div>
-        </Routes>
+        </div>
     );
 };
+
+export default GameInit;
