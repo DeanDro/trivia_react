@@ -9,8 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<DataProvider/>}/>
-        <Route path='/game_init' element={<GameInit/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/startGame' element={<GameInit/>}/>
       </Routes>
     </BrowserRouter>
   );
