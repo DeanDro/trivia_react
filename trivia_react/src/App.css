@@ -20,10 +20,10 @@ body{
   grid-template-columns: 50%;
   grid-template-rows: auto;
   grid-template-areas: "head head"
-                        "main main"
-                        "main main"
-                        "main main"
-                        "main main";
+                        "main"
+                        "main"
+                        "main"
+                        "main";
   justify-content: center;
   margin-top: 2em;
 }
@@ -41,16 +41,14 @@ body{
 .answer_box{
   background-color: #90708C;
   margin-top: 2em;
-  text-align: start;
+  text-align: center;
   border: 0.1em solid #90708C;
   border-radius: 15%;
-}
-
-.answer{
   color: white;
   font-family: 'Times New Roman';
   font-size: 1.5em;
   padding-left: 1em;
+
 }
 
 .answer_box:hover{

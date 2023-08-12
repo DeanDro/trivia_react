@@ -1,27 +1,47 @@
 import {React, createContext} from "react";
-import GameInit from "../components/GameInit";
+import Dashboard from "../components/Dashboard";
 import { questions } from "../assets/questionsList";
+import { useState } from "react";
 
 
-let category_chosen = "None";
-const categories = {
-    choice: category_chosen, 
-    questions: questions
-};
 
 export const DatabaseContext = createContext();
 
 function DataProvider(){
+    const [categories, setCategory] = useState(
+        {
+            choice: "None",
+            value: questions
+        }
+    );
+
+    const selection = (e)=>{
+        e.preventDefault();
+        setCategory({...categories, choice: e.target.category.value});
+    };
+
     return(
+        categories.choice === "None" ? 
+        <div>
+            <div className="container_input">
+                <form onSubmit={selection}>
+                    <fieldset>
+                        <label htmlFor="category">Choose a category: </label>
+                        <select id="category">
+                            <option value={"Harry_Potter"}>Harry Potter</option>
+                            <option value={"Games_of_Chance"}>Games of Chance</option>
+                        </select>
+                    </fieldset>
+                    <input type="submit" value={"Submit"}/>
+                </form>
+            </div>
+        </div>
+        :
         <DatabaseContext.Provider value={categories}>
-            <GameInit/>
+            <Dashboard/>
         </DatabaseContext.Provider> 
     )
 }
 
-function updateChoiceValue(props){
-    categories.choice = props.value;
-}
 
 export default DataProvider;
-export { updateChoiceValue};

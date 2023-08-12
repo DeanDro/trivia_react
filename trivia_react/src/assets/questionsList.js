@@ -1,8 +1,7 @@
 
 const questions = [
     {
-        "category": "Harry Potter",
-        "content": [
+        Harry_Potter: [
             {
                 id: 1,
                 question: "What is Harry Potter's dad first name?",
@@ -21,8 +20,27 @@ const questions = [
                 answer4: 100,
                 correct: 50
             }
+        ],
+        Games_of_Chance: [
+            {
+                id: 1,
+                question: "What did Seb study in grad school?",
+                answer1: "Medicine",
+                answer2: "Biology",
+                answer3: "Physics",
+                answer4: "Math",
+                correct: "Medicine"
+            },
+            {
+                id: 2,
+                question: "What is Alex's favorite song?",
+                answer1: "Fly",
+                answer2: "Talk dirty to me",
+                answer3: "I am a looser",
+                answer4: "Who is the biggest doush in the world?",
+                correct: "Fly"
+            }
         ]
-    }
-]
+    }]
 
 export {questions};
