@@ -9,9 +9,7 @@ function Dashboard(){
     const context = useContext(DatabaseContext);
     return(
         <div className='mainDashboard'>
-            <Navbar choice={context.choice}/>
             <Card/>
-            <Footer/>
         </div>
     )
 }

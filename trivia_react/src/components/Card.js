@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { DatabaseContext } from "../data/DataProvider";
 import { useState } from "react";
+import GameOver from "./GameOver";
 
 
 function Card(){
@@ -8,6 +9,7 @@ function Card(){
     const [score, setScore] = useState(0);
     const [answer, setAnswer] = useState("");
     const [numberQuestion, setNumberQuestion] = useState(1);
+    const [gameOn, setGameOn] = useState(true);
     const value = useContext(DatabaseContext);
     const choice = value.choice;
     let dict = value.value[0][choice][counter];
@@ -24,8 +26,10 @@ function Card(){
         }
         
         // Ensure we don't have more than 11 questions 
-        if (numberQuestion < 11){
+        if (numberQuestion < 2){
             setCounter(counter+1);
+        } else {
+            setGameOn(false);
         }
         
         console.log(dict);
@@ -33,6 +37,7 @@ function Card(){
     }
 
     return (
+        gameOn ?
         <form onSubmit={handleSubmit}>
             <div className="container">
                 <div className="question_box">
@@ -45,6 +50,8 @@ function Card(){
                 <input className="answer_box" type="submit" value={dict.answer4} onClick={(e)=>setAnswer(e.target.value)}/>
             </div>
         </form>
+        :
+        <GameOver score={score}/>
     );
 }; 
 

@@ -3,7 +3,7 @@ import retrieveImg from "../assets/manageAssets";
 
 
 function Footer(){
-    let img = retrieveImg();
+    let img = retrieveImg("books");
     return (
         <footer className="footing">
             {img}
