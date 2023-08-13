@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DatabaseContext } from "../data/DataProvider";
 import { useState } from "react";
 import GameOver from "./GameOver";
+import { useEffect } from "react";
 
 
 function Card(){
@@ -13,16 +14,20 @@ function Card(){
     const value = useContext(DatabaseContext);
     const choice = value.choice;
     let dict = value.value[0][choice][counter];
-
+    
     const handleSubmit = (e)=>{
         e.preventDefault();
         setNumberQuestion(numberQuestion+1);
 
         if (answer === dict.correct){
-            console.log("Correct!");
             setScore(score+1);
         } else {
-            console.log("Wrong!");
+            setTimeout(()=>{
+                let corChoice = dict.correctNumber;
+                let box = document.getElementById(corChoice);
+                box.style.color = "#76de83";
+            }, 2000);
+
         }
         
         // Ensure we don't have more than 11 questions 
@@ -32,24 +37,31 @@ function Card(){
             setGameOn(false);
         }
         
-        console.log(dict);
-        console.log(counter+1);
     }
 
     return (
         gameOn ?
-        <form onSubmit={handleSubmit}>
-            <div className="container">
-                <div className="question_box">
-                    <h2>{dict.question}</h2>
+        <div>
+            <nav className="navbar">
+                <h2>You have answered {score} questions correctly.</h2>
+            </nav>
+            <form onSubmit={handleSubmit}>
+                <div className="container">
+                    <div className="question_box">
+                        <h2>{dict.question}</h2>
+                    </div>
+                    <br/>
+                    <input id="answer1" className="answer_box" type="submit" 
+                    value={dict.answer1} onClick={(e)=>setAnswer(e.target.value)}/>
+                    <input id="answer2" className="answer_box" type="submit" 
+                    value={dict.answer2} onClick={(e)=>setAnswer(e.target.value)}/>
+                    <input id="answer3" className="answer_box" type="submit" 
+                    value={dict.answer3} onClick={(e)=>setAnswer(e.target.value)}/>
+                    <input id="answer4" className="answer_box" type="submit" 
+                    value={dict.answer4} onClick={(e)=>setAnswer(e.target.value)}/>
                 </div>
-                <br/>
-                <input className="answer_box" type="submit" value={dict.answer1} onClick={(e)=>setAnswer(e.target.value)}/>
-                <input className="answer_box" type="submit" value={dict.answer2} onClick={(e)=>setAnswer(e.target.value)}/>
-                <input className="answer_box" type="submit" value={dict.answer3} onClick={(e)=>setAnswer(e.target.value)}/>
-                <input className="answer_box" type="submit" value={dict.answer4} onClick={(e)=>setAnswer(e.target.value)}/>
-            </div>
-        </form>
+            </form>
+        </div>
         :
         <GameOver score={score}/>
     );

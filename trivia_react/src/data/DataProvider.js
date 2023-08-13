@@ -2,7 +2,6 @@ import {React, createContext} from "react";
 import Dashboard from "../components/Dashboard";
 import { questions } from "../assets/questionsList";
 import { useState } from "react";
-import { retriveBackground } from "../assets/manageAssets";
 
 
 export const DatabaseContext = createContext();
@@ -11,7 +10,8 @@ function DataProvider(){
     const [categories, setCategory] = useState(
         {
             choice: "None",
-            value: questions
+            value: questions,
+            score: 0
         }
     );
 

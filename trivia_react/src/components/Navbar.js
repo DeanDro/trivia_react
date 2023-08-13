@@ -4,10 +4,9 @@ import retrieveImg from "../assets/manageAssets";
 import DataProvider from "../data/DataProvider";
 
 function Navbar(props){
-    const logo = retrieveImg("science");
     return (
-        <nav className="logo">
-            {logo}
+        <nav className="navbar">
+            <h2>Score: </h2>
         </nav>
     );
 };

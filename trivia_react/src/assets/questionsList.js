@@ -9,7 +9,8 @@ const questions = [
                 answer2: "Tom",
                 answer3: "Michael",
                 answer4: "Harry",
-                correct: "John"
+                correct: "John",
+                correctNumber: "answer1"
             },
             {
                 id : 2,
@@ -18,7 +19,8 @@ const questions = [
                 answer2: 39,
                 answer3: 69,
                 answer4: 100,
-                correct: 50
+                correct: 50,
+                correctNumber: "answer1"
             }
         ],
         Games_of_Chance: [
@@ -29,7 +31,8 @@ const questions = [
                 answer2: "Biology",
                 answer3: "Physics",
                 answer4: "Math",
-                correct: "Medicine"
+                correct: "Medicine",
+                correctNumber: "answer1"
             },
             {
                 id: 2,
@@ -38,7 +41,8 @@ const questions = [
                 answer2: "Talk dirty to me",
                 answer3: "I am a looser",
                 answer4: "Who is the biggest doush in the world?",
-                correct: "Fly"
+                correct: "Fly",
+                correctNumber: "answer1"
             }
         ]
     }]
