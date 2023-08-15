@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { DatabaseContext } from "../data/DataProvider";
 import { useState } from "react";
 import GameOver from "./GameOver";
-import { useEffect } from "react";
 
 
 function Card(){
@@ -15,27 +14,45 @@ function Card(){
     const choice = value.choice;
     let dict = value.value[0][choice][counter];
     
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        setNumberQuestion(numberQuestion+1);
 
-        if (answer === dict.correct){
-            setScore(score+1);
-        } else {
-            setTimeout(()=>{
-                let corChoice = dict.correctNumber;
-                let box = document.getElementById(corChoice);
-                box.style.color = "#76de83";
-            }, 2000);
-
-        }
+    const handleCorrectAnswer = (e)=>{
+        setAnswer(e.target.value);
+        let corChoice = dict.correctNumber;
+        let box = document.getElementById(corChoice);
+        box.style.backgroundColor = "#76de83";       
         
-        // Ensure we don't have more than 11 questions 
-        if (numberQuestion < 2){
-            setCounter(counter+1);
-        } else {
-            setGameOn(false);
-        }
+    }
+    
+    const handleSubmit = (e)=>{
+
+        e.preventDefault();
+        setTimeout(()=> {
+
+            let corChoice = dict.correctNumber;
+            let box = document.getElementById(corChoice);
+            box.style.backgroundColor = "white";
+            box.style.color = "black";
+            box.onmouseover = ()=>{
+                box.style.backgroundColor = "#372B4C";
+                box.style.color = "white";
+            }
+            box.onmouseout = ()=>{
+                box.style.backgroundColor = "white";
+                box.style.color = "black";
+            }
+
+            setNumberQuestion(numberQuestion+1);        
+            if (answer === dict.correct){
+                setScore(score+1);
+            }    
+
+            // Ensure we don't have more than 11 questions 
+            if (numberQuestion < 2){
+                setCounter(counter+1);            
+            } else {
+                setGameOn(false);
+            }
+        },1000);
         
     }
 
@@ -52,9 +69,9 @@ function Card(){
                     </div>
                     <br/>
                     <input id="answer1" className="answer_box" type="submit" 
-                    value={dict.answer1} onClick={(e)=>setAnswer(e.target.value)}/>
+                    value={dict.answer1} onClick={handleCorrectAnswer}/>
                     <input id="answer2" className="answer_box" type="submit" 
-                    value={dict.answer2} onClick={(e)=>setAnswer(e.target.value)}/>
+                    value={dict.answer2} onClick={handleCorrectAnswer}/>
                     <input id="answer3" className="answer_box" type="submit" 
                     value={dict.answer3} onClick={(e)=>setAnswer(e.target.value)}/>
                     <input id="answer4" className="answer_box" type="submit" 
