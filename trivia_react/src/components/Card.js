@@ -73,9 +73,9 @@ function Card(){
                     <input id="answer2" className="answer_box" type="submit" 
                     value={dict.answer2} onClick={handleCorrectAnswer}/>
                     <input id="answer3" className="answer_box" type="submit" 
-                    value={dict.answer3} onClick={(e)=>setAnswer(e.target.value)}/>
+                    value={dict.answer3} onClick={handleCorrectAnswer}/>
                     <input id="answer4" className="answer_box" type="submit" 
-                    value={dict.answer4} onClick={(e)=>setAnswer(e.target.value)}/>
+                    value={dict.answer4} onClick={handleCorrectAnswer}/>
                 </div>
             </form>
         </div>
