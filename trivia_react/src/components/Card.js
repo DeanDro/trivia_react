@@ -3,7 +3,6 @@ import { DatabaseContext } from "../data/DataProvider";
 import { useState } from "react";
 import GameOver from "./GameOver";
 
-
 function Card(){
     const [counter, setCounter] = useState(0);
     const [score, setScore] = useState(0);
