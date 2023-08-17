@@ -24,8 +24,12 @@ function MetaTags(){
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta property="og:title" content="Games of Chance Quiz" />
             <meta property="og:type" content="text/html" />
+            <meta property="og:description" content="A trivia game"/>
             <meta property="og:url" content="https://www.raqueldrosos.com/trivia" />
             <meta property="og:image" content="https://m.media-amazon.com/images/I/61GHyFMKT5L._AC_UF1000,1000_QL80_.jpg" />
+            <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
         </head>
     );
 }
