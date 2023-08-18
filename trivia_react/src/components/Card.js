@@ -46,7 +46,7 @@ function Card(){
             }    
 
             // Ensure we don't have more than 11 questions 
-            if (numberQuestion < 2){
+            if (numberQuestion < 10){
                 setCounter(counter+1);            
             } else {
                 setGameOn(false);
