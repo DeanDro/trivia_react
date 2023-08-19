@@ -6,7 +6,6 @@ import MetaTags from './components/MetaTags';
 function App() {
   return (
     <>
-      <MetaTags/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<DataProvider/>}/>
