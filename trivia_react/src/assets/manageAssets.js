@@ -1,6 +1,5 @@
 import books from './stack_books.png';
 import quiz from './science.png';
-import bookShelf from './bookshelf.jpg';
 import bookPages from './book_pages.jpg';
 
 function retrieveImg(props){
@@ -10,7 +9,7 @@ function retrieveImg(props){
     );
 };
 
-function retriveBackground(props){
+function retriveBackground(){
     const image = bookPages;
     return (
         <img className='backgroundImage' src={image} alt='bookshelf'/>

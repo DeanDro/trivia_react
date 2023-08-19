@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DatabaseContext } from "../data/DataProvider";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GameOver from "./GameOver";
 
 function Card(){
@@ -55,11 +55,35 @@ function Card(){
         
     }
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            let box1 = document.getElementById("answer1");
+            let box2 = document.getElementById("answer2");
+            let box3 = document.getElementById("answer3");
+            let box4 = document.getElementById("answer4");
+
+            if (box1 !== null){
+
+                box1.style.backgroundColor = "white";
+                box1.style.color = "black";
+
+                box2.style.backgroundColor = "white";
+                box2.style.color = "black";
+
+                box3.style.backgroundColor = "white";
+                box3.style.color = "black";
+
+                box4.style.backgroundColor = "white";
+                box4.style.color = "black";
+            }
+        },1300)
+    });
+
     return (
         gameOn ?
-        <div>
+        <div className="gameOn">
             <nav className="navbar">
-                <h2>You have answered {score} questions correctly.</h2>
+                <h2>You have answered {score}/10 correct</h2>
             </nav>
             <form onSubmit={handleSubmit}>
                 <div className="container">

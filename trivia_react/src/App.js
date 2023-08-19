@@ -1,17 +1,21 @@
 import './App.css';
 import DataProvider from './data/DataProvider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MetaTags from './components/MetaTags';
 
 function App() {
+
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<DataProvider/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <div>
+      <header></header>
+      <main>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<DataProvider/>}/>
+          </Routes>
+        </BrowserRouter>
+      </main>
+      <footer></footer>
+    </div>
   );
 }
 
