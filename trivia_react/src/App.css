@@ -46,7 +46,7 @@ body{
 
 .container{
   display: grid;
-  grid-template-columns: 60%;
+  grid-template-columns: 72%;
   grid-template-rows: auto;
   grid-template-areas: "head head"
                         "main"
@@ -74,9 +74,9 @@ body{
   border-radius: 15%;
   color: black;
   font-family: 'Trebuchet MS';
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
-  height: 2em;
+  height: 3em;
 }
 
 .answer_box:hover{

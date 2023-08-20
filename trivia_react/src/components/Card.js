@@ -66,15 +66,49 @@ function Card(){
 
                 box1.style.backgroundColor = "white";
                 box1.style.color = "black";
+                box1.onmouseover = ()=>{
+                    box1.style.backgroundColor = "#372B4C";
+                    box1.style.color = "white";
+                }
+                box1.onmouseout = () =>{
+                    box1.style.backgroundColor = "white";
+                    box1.style.color = "black";
+                }
+                
 
                 box2.style.backgroundColor = "white";
                 box2.style.color = "black";
+                box2.onmouseover = ()=>{
+                    box2.style.backgroundColor = "#372B4C";
+                    box2.style.color = "white";
+                }
+                box2.onmouseout = () =>{
+                    box2.style.backgroundColor = "white";
+                    box2.style.color = "black";
+                }
 
                 box3.style.backgroundColor = "white";
                 box3.style.color = "black";
+                box3.onmouseover = ()=>{
+                    box3.style.backgroundColor = "#372B4C";
+                    box3.style.color = "white";
+                }
+                box3.onmouseout = () =>{
+                    box3.style.backgroundColor = "white";
+                    box3.style.color = "black";
+                }
 
                 box4.style.backgroundColor = "white";
                 box4.style.color = "black";
+                box4.onmouseover = ()=>{
+                    box4.style.backgroundColor = "#372B4C";
+                    box4.style.color = "white";
+                }
+                box4.onmouseout = () =>{
+                    box4.style.backgroundColor = "white";
+                    box4.style.color = "black";
+                }
+
             }
         },1300)
     });
