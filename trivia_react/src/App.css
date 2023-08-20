@@ -3,9 +3,9 @@
 }
 
 body{
-  background-color: #49306B;
   background-image: url('https://cdn.pixabay.com/photo/2016/03/27/19/32/book-1283865_1280.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main_choice{
@@ -34,6 +34,8 @@ body{
   font-family: 'Trebuchet MS';
   font-size: 3em;
   color: black;
+  background-color: white;
+  margin-bottom: 1em;
 }
 
 .category_button{
@@ -42,11 +44,12 @@ body{
   background-color: #f2972e;
   width: 5em;
   border-radius: 15em;
+  margin-bottom: 2em;
 }
 
 .container{
   display: grid;
-  grid-template-columns: 72%;
+  grid-template-columns: 84%;
   grid-template-rows: auto;
   grid-template-areas: "head head"
                         "main"
@@ -105,50 +108,25 @@ body{
 
 .gameOver{
   display: flexbox;
-  color: white;
+  color: black;
   font-family: 'Franklin Gothic Medium';
   text-align: center;
   height: 20em;
   padding: 2em;
-}
-
-.gameOver h3 {
-  color: black;
+  margin-top: 40%;
 }
 
 .navbar{
   display: flex;
   flex-direction: row-reverse;
   padding-right: 2em;
+}
+
+.navbar h2 {
   color: black;
+  background-color: white;
   font-family: "Trebuchet MS";
-  font-size: 1em;
-}
-
-.social_container{
-  width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.fa{
-  text-decoration: none;
-  padding: 1em;
-  text-align: center;
-  width: 40px;
-  margin: 5px 5px;
-  border-radius: 50%;
-  height: auto;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa-instagram {
-  background: #125688;
-  color: white;
+  font-size: 1.5em;
 }
 
 .gameOn{
@@ -158,17 +136,14 @@ body{
 
 @media only screen and (max-width: 1200px){
 
-  body{
-    background-size: auto;
-    height: 100%;
-  }
-
   .gameOver h1{
     color: black;
+    background-color: white;
   }
 
   .gameOver h2{
     color: black;
+    background-color: white;
   }
 
 }

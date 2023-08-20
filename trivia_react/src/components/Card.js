@@ -117,7 +117,7 @@ function Card(){
         gameOn ?
         <div className="gameOn">
             <nav className="navbar">
-                <h2>You have answered {score}/10 correct</h2>
+                <h2>{score}/10 correct</h2>
             </nav>
             <form onSubmit={handleSubmit}>
                 <div className="container">
